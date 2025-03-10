@@ -38,13 +38,52 @@
 			#endregion
 
 			#region With Generics
-			string[] Names = { "Ali", "Omar", "Rana", "islam", "Zoz" };
-			SotringTypesFuncDelegate<string, string> sortingType = SotringTypes.SortingStringAsc;
-			SortingAlgorithms<string>.BubbleSort(Names, sortingType);
-			foreach (string name in Names)
+			#region EX 01
+			//string[] Names = { "Ali", "Omar", "Rana", "islam", "Zoz" };
+			//SotringTypesFuncDelegate<string, string> sortingType = SotringTypes.SortingStringAsc;
+			//SortingAlgorithms<string>.BubbleSort(Names, sortingType);
+			//foreach (string name in Names)
+			//{
+			//	Console.WriteLine(name);
+			//}
+			#endregion
+			#endregion
+			#endregion
+
+			#region Part 04 Delegate Example 03 [With out Generics]
+
+			#region Without Generics
+			#region EX 01
+			//List<int> numbers = Enumerable.Range(0,100).ToList(); 
+			////List<int> OddNums = FunctionsEx03.OddNumber(numbers);
+			//List<int> EvenNums = FunctionsEx03.EvenNumber(numbers);
+			////List<int> NumsDivisible7 = FunctionsEx03.NumberDivisibleBy7(numbers);
+			////List<int> NumsDivisible10 = FunctionsEx03.NumberDivisibleBy10(numbers);
+			//foreach (int num in EvenNums)
+			//{
+			//	Console.WriteLine(num);
+			//} 
+			#endregion
+			#region EX02
+			List<int> numbers = Enumerable.Range(0, 100).ToList();
+			List<int> OddNums = FunctionsEx03.FindNumbeers(numbers, ConditionFunctions.CheckOdd);
+			List<int> EvenNumbers = FunctionsEx03.FindNumbeers(numbers, ConditionFunctions.CheckEven);
+			foreach (int num in OddNums)
 			{
-				Console.WriteLine(name);
+				Console.WriteLine(num);
 			}
+
+			Console.WriteLine("---------------------------EVEN-------------------------");
+
+			foreach (int num in EvenNumbers)
+			{
+				Console.WriteLine(num);
+			}
+			#endregion
+			#endregion
+
+			#region With Generics
+
 			#endregion
 			#endregion
 		}
