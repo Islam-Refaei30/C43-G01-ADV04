@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-	public delegate bool ConditionFunCDelegale(int Number);
-	internal class FunctionsEx03
+	public delegate bool ConditionFunCDelegale<in T>(T Number);
+	internal class FunctionsEx03<T>
 	{
 		public static List<int> OddNumber(List<int> list)
 		{
@@ -70,9 +70,9 @@ namespace Demo
 		}
 
 
-		public static List<int> FindNumbeers(List<int> list, ConditionFunCDelegale Condition)
+		public static List<T> FindElement(List<T> list, ConditionFunCDelegale<T> Condition)
 		{
-			List<int> result = new List<int>();
+			List<T> result = new List<T>();
 
 			if (list is not null)
 			{

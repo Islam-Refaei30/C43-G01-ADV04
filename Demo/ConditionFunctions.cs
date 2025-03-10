@@ -17,5 +17,15 @@ namespace Demo
 		{
 			return Number % 2 == 0;
 		}
+
+		public static bool StringGraterThan4(string Name)
+		{
+			return Name?.Length > 4;
+		}
+
+		public static bool StringLessThan4(string Name)
+		{
+			return Name?.Length < 4;
+		}
 	}
 }

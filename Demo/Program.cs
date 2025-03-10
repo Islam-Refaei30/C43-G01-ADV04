@@ -65,25 +65,33 @@
 			//} 
 			#endregion
 			#region EX02
-			List<int> numbers = Enumerable.Range(0, 100).ToList();
-			List<int> OddNums = FunctionsEx03.FindNumbeers(numbers, ConditionFunctions.CheckOdd);
-			List<int> EvenNumbers = FunctionsEx03.FindNumbeers(numbers, ConditionFunctions.CheckEven);
-			foreach (int num in OddNums)
-			{
-				Console.WriteLine(num);
-			}
+			//List<int> numbers = Enumerable.Range(0, 100).ToList();
+			//List<int> OddNums = FunctionsEx03.FindNumbeers(numbers, ConditionFunctions.CheckOdd);
+			//List<int> EvenNumbers = FunctionsEx03.FindNumbeers(numbers, ConditionFunctions.CheckEven);
+			//foreach (int num in OddNums)
+			//{
+			//	Console.WriteLine(num);
+			//}
 
-			Console.WriteLine("---------------------------EVEN-------------------------");
+			//Console.WriteLine("---------------------------EVEN-------------------------");
 
-			foreach (int num in EvenNumbers)
-			{
-				Console.WriteLine(num);
-			}
+			//foreach (int num in EvenNumbers)
+			//{
+			//	Console.WriteLine(num);
+			//}
 			#endregion
 			#endregion
+			#endregion
 
+			#region Part 05 Delegate Example 03 [With Generics]
 			#region With Generics
-
+			List<string> Names = new List<string> { "Islam", "Zoz", "Rana", "ali" };
+			List<string> NewL = new List<string>();
+			NewL = FunctionsEx03<string>.FindElement(Names, ConditionFunctions.StringGraterThan4);
+			foreach (string s in NewL)
+			{
+				Console.WriteLine(s);
+			}
 			#endregion
 			#endregion
 		}
