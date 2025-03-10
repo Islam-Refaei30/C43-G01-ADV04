@@ -24,17 +24,27 @@
 
 			#region Part 02 Delegate Example 02 [With out Generics]
 			#region Without Generics
-			int[] Numbers = { 5, 5, 10, 6, 8, 200, 34 };
-			//SortingAlgorithms.BubbleSortAsc(Numbers);
-			//SortingAlgorithms.BubbleSortDesc(Numbers);
-			SotringTypesFuncDelegate SortingTypr = SotringTypes.ComperGrt;
-			//SotringTypesFuncDelegate SortingTypr = default;
-			SortingAlgorithms.BubbleSort(Numbers, SortingTypr);
-			foreach (int number in Numbers)
-			{
-				Console.WriteLine(number);
-			}
+			//int[] Numbers = { 5, 5, 10, 6, 8, 200, 34 };
+			////SortingAlgorithms.BubbleSortAsc(Numbers);
+			////SortingAlgorithms.BubbleSortDesc(Numbers);
+			//SotringTypesFuncDelegate SortingTypr = SotringTypes.ComperGrt;
+			////SotringTypesFuncDelegate SortingTypr = default;
+			//SortingAlgorithms.BubbleSort(Numbers, SortingTypr);
+			//foreach (int number in Numbers)
+			//{
+			//	Console.WriteLine(number);
+			//}
 
+			#endregion
+
+			#region With Generics
+			string[] Names = { "Ali", "Omar", "Rana", "islam", "Zoz" };
+			SotringTypesFuncDelegate<string, string> sortingType = SotringTypes.SortingStringAsc;
+			SortingAlgorithms<string>.BubbleSort(Names, sortingType);
+			foreach (string name in Names)
+			{
+				Console.WriteLine(name);
+			}
 			#endregion
 			#endregion
 		}
