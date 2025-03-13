@@ -101,21 +101,61 @@
 			#region Examples On Built in Delegate
 
 			#region Predicate
-			Predicate<int> predicate = SomeFunctionForTest.test;
-			predicate.Invoke(10);
+			//Predicate<int> predicate = SomeFunctionForTest.test;
+			//predicate.Invoke(10);
 			#endregion
 
 			#region Func
-			Func<int,string> Func = SomeFunctionForTest.Cast;
+			//Func<int,string> Func = SomeFunctionForTest.Cast;
+			//Func.Invoke(10);
+			//Func(15);
+			#endregion
+
+			#region Action
+			//Action<string> action = SomeFunctionForTest.Print;
+			//action("islam");
+			#endregion
+
+			#endregion
+			#endregion
+
+			#region Part 08 Anonymous Method and Lambada Expression
+			#region Anonymous Function
+			#region Predicate
+			//Predicate<int> predicate = delegate (int Numbeer) { return Numbeer > 0; };
+			//predicate.Invoke(50);
+			//predicate(10);
+			#endregion
+
+			#region Func
+			//Func<int, string> Func = delegate (int Number) { return Number.ToString(); };
+			//Func.Invoke(10);
+			//Func(15);
+			#endregion
+
+			#region Action
+			//Action<string> action = delegate (string Name) { Console.WriteLine($"Name is : {Name}"); };
+			//action("islam");
+			#endregion
+			#endregion
+
+			#region Lambada Expression
+			#region Predicate
+			Predicate<int> predicate = Numbeer => Numbeer > 0;
+			predicate.Invoke(50);
+			predicate(10);
+			#endregion
+
+			#region Func
+			Func<int, string> Func = Name => Name.ToString();  
 			Func.Invoke(10);
 			Func(15);
 			#endregion
 
 			#region Action
-			Action<string> action = SomeFunctionForTest.Print;
+			Action<string> action = Name => Console.WriteLine($"Name is : {Name}");
 			action("islam");
 			#endregion
-
 			#endregion
 			#endregion
 		}
