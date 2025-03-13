@@ -161,22 +161,44 @@
 
 			#region Part 09 New Feature at Delegate in C# 10
 			#region Predicate
-			var predicate = (int Numbeer ) => Numbeer > 0;
+			//var predicate = (int Numbeer ) => Numbeer > 0;
 			//Predicate<int> predicate = Numbeer => Numbeer > 0;
 			//predicate.Invoke(50);
-			predicate(10);
+			//predicate(10);
 			#endregion
 
 			#region Func
-			var Func = (int Name) => Name.ToString();
-			Func.Invoke(10);
-			Func(15);
+			//var Func = (int Name) => Name.ToString();
+			//Func.Invoke(10);
+			//Func(15);
 			#endregion
 
 			#region Action
-			var action = (string Name) => Console.WriteLine($"Name is : {Name}");
-			action("islam");
+			//var action = (string Name) => Console.WriteLine($"Name is : {Name}");
+			//action("islam");
 			#endregion
+			#endregion
+
+			#region Part 10 List Methods (That Take Functions As Parameter)
+			List<int> list = new List<int>() { 6, 5, 8, 9, 4, 7, 56, 58, 4, 254, 12, 4 };
+			//List<int> newList = FunctionsEx03<int>.FindElement(list, ConditionFunctions.CheckOdd);
+
+			//List<int> newList = FunctionsEx03<int>.FindElement(list, delegate (int Num) { return Num % 2 == 1; });
+			//List<int> newList = FunctionsEx03<int>.FindElement(list, (Num) => Num % 2 == 1 );
+
+			//foreach(int oodNum in newList)
+			//{
+			//	Console.WriteLine(oodNum);
+			//}
+			//----------------------------------------------------------//
+
+			list.RemoveAll(N => N % 2 == 1);
+
+			foreach (int Num in list)
+			{
+				Console.WriteLine(Num);
+			}
+
 			#endregion
 		}
 	}
