@@ -141,21 +141,41 @@
 
 			#region Lambada Expression
 			#region Predicate
-			Predicate<int> predicate = Numbeer => Numbeer > 0;
-			predicate.Invoke(50);
+			//Predicate<int> predicate = Numbeer => Numbeer > 0;
+			//predicate.Invoke(50);
+			//predicate(10);
+			#endregion
+
+			#region Func
+			//Func<int, string> Func = Name => Name.ToString();  
+			//Func.Invoke(10);
+			//Func(15);
+			#endregion
+
+			#region Action
+			//Action<string> action = Name => Console.WriteLine($"Name is : {Name}");
+			//action("islam");
+			#endregion
+			#endregion
+			#endregion
+
+			#region Part 09 New Feature at Delegate in C# 10
+			#region Predicate
+			var predicate = (int Numbeer ) => Numbeer > 0;
+			//Predicate<int> predicate = Numbeer => Numbeer > 0;
+			//predicate.Invoke(50);
 			predicate(10);
 			#endregion
 
 			#region Func
-			Func<int, string> Func = Name => Name.ToString();  
+			var Func = (int Name) => Name.ToString();
 			Func.Invoke(10);
 			Func(15);
 			#endregion
 
 			#region Action
-			Action<string> action = Name => Console.WriteLine($"Name is : {Name}");
+			var action = (string Name) => Console.WriteLine($"Name is : {Name}");
 			action("islam");
-			#endregion
 			#endregion
 			#endregion
 		}
