@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-	public delegate bool ConditionFunCDelegale<in T>(T Number);
+	//public delegate bool ConditionFunCDelegale<in T>(T Number);
 	internal class FunctionsEx03<T>
 	{
 		public static List<int> OddNumber(List<int> list)
@@ -69,8 +69,7 @@ namespace Demo
 			return result;
 		}
 
-
-		public static List<T> FindElement(List<T> list, ConditionFunCDelegale<T> Condition)
+		public static List<T> FindElement(List<T> list, Predicate<T> Condition)
 		{
 			List<T> result = new List<T>();
 
@@ -85,5 +84,8 @@ namespace Demo
 			}
 			return result;
 		}
+
+		
+		
 	}
 }

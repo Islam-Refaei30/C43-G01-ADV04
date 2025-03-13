@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-	public delegate bool SotringTypesFuncDelegate<T01, T02>(T01 array01, T02 array02);
+	//public delegate bool SotringTypesFuncDelegate<T01, T02>(T01 array01, T02 array02);
 	//public delegate TResult SotringTypesFuncDelegate<in T01, in T02, out TResult>(T01 array01, T02 array02);
 	internal class SortingAlgorithms<T>
 	{
@@ -67,7 +67,7 @@ namespace Demo
 
 		#region With Generics
 
-		public static void BubbleSort(T[] Array, SotringTypesFuncDelegate<T,T> sotringTypesFunc)
+		public static void BubbleSort(T[] Array, Func<T, T,bool> sotringTypesFunc)
 		{
 			if (Array is not null && sotringTypesFunc is not null)
 			{

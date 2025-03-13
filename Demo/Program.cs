@@ -40,8 +40,10 @@
 			#region With Generics
 			#region EX 01
 			//string[] Names = { "Ali", "Omar", "Rana", "islam", "Zoz" };
-			//SotringTypesFuncDelegate<string, string> sortingType = SotringTypes.SortingStringAsc;
+			////SotringTypesFuncDelegate<string, string> sortingType = SotringTypes.SortingStringAsc;
+			//Func<string, string, bool> sortingType = SotringTypes.SortingStringAsc;
 			//SortingAlgorithms<string>.BubbleSort(Names, sortingType);
+			////SortingAlgorithms<string>.BubbleSort(Names, SotringTypes.SortingStringAsc);
 			//foreach (string name in Names)
 			//{
 			//	Console.WriteLine(name);
@@ -66,8 +68,8 @@
 			#endregion
 			#region EX02
 			//List<int> numbers = Enumerable.Range(0, 100).ToList();
-			//List<int> OddNums = FunctionsEx03.FindNumbeers(numbers, ConditionFunctions.CheckOdd);
-			//List<int> EvenNumbers = FunctionsEx03.FindNumbeers(numbers, ConditionFunctions.CheckEven);
+			//List<int> OddNums = FunctionsEx03<int>.FindElement(numbers, ConditionFunctions.CheckOdd);
+			//List<int> EvenNumbers = FunctionsEx03<int>.FindElement(numbers, ConditionFunctions.CheckEven);
 			//foreach (int num in OddNums)
 			//{
 			//	Console.WriteLine(num);
@@ -85,13 +87,35 @@
 
 			#region Part 05 Delegate Example 03 [With Generics]
 			#region With Generics
-			List<string> Names = new List<string> { "Islam", "Zoz", "Rana", "ali" };
-			List<string> NewL = new List<string>();
-			NewL = FunctionsEx03<string>.FindElement(Names, ConditionFunctions.StringGraterThan4);
-			foreach (string s in NewL)
-			{
-				Console.WriteLine(s);
-			}
+			//List<string> Names02=new List<string> { "Islam", "Zoz", "Rana", "ali" };
+			//List<string> NewL = new List<string>();
+			//NewL = FunctionsEx03<string>.FindElement(Names02,ConditionFunctions.StringLessThan4);
+			//foreach (string s in NewL)
+			//{
+			//	Console.WriteLine(s);
+			//}
+			#endregion
+			#endregion
+
+			#region Part 06 Built In Delegate [Func- Predicate- Action]
+			#region Examples On Built in Delegate
+
+			#region Predicate
+			Predicate<int> predicate = SomeFunctionForTest.test;
+			predicate.Invoke(10);
+			#endregion
+
+			#region Func
+			Func<int,string> Func = SomeFunctionForTest.Cast;
+			Func.Invoke(10);
+			Func(15);
+			#endregion
+
+			#region Action
+			Action<string> action = SomeFunctionForTest.Print;
+			action("islam");
+			#endregion
+
 			#endregion
 			#endregion
 		}
